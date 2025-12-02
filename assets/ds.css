@@ -1,0 +1,62 @@
+
+:root {
+    --main-white-color: #FFF;
+    --main-black-color: #111111;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (max-width: 400px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 401px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+.btn-default {
+    padding: 10px 50px 10px 20px;
+    border-radius: 10px;
+}
+.intro-clinic-video {
+    /*padding: 50px 0 50px;*/
+}
+.nocapitalize {
+    text-transform: none;
+}
+
+.why-choose-content h3 {
+    text-transform: none;
+}
+.cta-box-content h3 {
+    text-transform: none;
+}
+.about-us-body ul li {
+    text-transform: none;
+}
+.btn-default {
+    text-transform: none;
+}
+.footer-links ul li a {
+    text-transform: none;
+}
+
+
+

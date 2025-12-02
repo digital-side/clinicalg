@@ -1,0 +1,79 @@
+/* The Modal (background) */
+.ds-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.ds-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.ds-modal-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ds-modal-close:hover,
+.ds-modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ds-modal-img {
+    width: 100%;
+    height: auto;
+
+    /*height: 500px;*/
+    /*max-width: 100%;*/
+    /*
+    max-height: 50%;
+     */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 700px) {
+    .ds-modal-content {
+        width: 50%;
+    }
+}
+
+.ds-modal-button-container{
+    text-align: center;
+    padding: 10px;
+    z-index: 1001;
+    /*position: absolute;*/
+    /*top: 30px;*/
+}
+.ds-modal-button{
+    color: #FFF !important;
+    background-color: #d74d29;
+    border: 1px solid #d74d29;
+    padding: 8px;
+    display: inline-block;
+    width: 150px;
+    font-size: 14px;
+}
+.ds-modal-button:hover {
+    background-color: white;
+    color: #d74d29 !important;
+    border: 1px solid white;
+}
