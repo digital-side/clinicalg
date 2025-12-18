@@ -1,0 +1,242 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES">
+<!--<![endif]-->
+<head>
+
+    {% from "functions.j2" import random_uuid with context %}
+    {% set uuid = random_uuid() %}
+
+
+    {%- with module_active=website.modules.ganalitycs.active, GoogleAnalyticsID=website.GAnalyticsID %}
+        {%- include 'google-analitycs.j2' %}
+    {% endwith %}
+    {%- with module_active=website.modules.gtagmanager.active, GoogleTagManagerID=website.GTagManagerID %}
+        {%- include 'google-tags.j2' %}
+    {% endwith %}
+
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--{{ ' --' + '>' }}
+    {% include 'metas.j2' %}
+    {{ '<!-- ' }} -->
+
+    <title>{% block title %}{{ website.title }}{% endblock %}</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="assets/css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="assets/css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="assets/css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="assets/css/custom.css" rel="stylesheet" media="screen">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/ds.css">
+
+</head>
+<body>
+<!-- {{ ' --' + '>' }}
+{%- with module_conf=website.modules.popup,
+            popup_image="assets/img/ds/popup.png",
+            popup_redirect_url=website.urls.reservations %}
+    {%- include 'popup.j2' %}
+{% endwith %}
+{{ '<!-- ' }} -->
+
+<!-- Preloader Start -->
+<div class="preloader">
+    <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-icon"><img src="assets/images/loader.svg" alt=""></div>
+    </div>
+</div>
+<!-- Preloader End -->
+
+<!-- Header Start -->
+<header class="main-header">
+    <div class="header-sticky">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo Start -->
+                <a class="navbar-brand" href="index.html">
+                    <!--						<img src="assets/images/logo.svg" alt="Logo">-->
+                    <img src="assets/ds/images/logo-azul.png" alt="Logo" width="400">
+                </a>
+                <!-- Logo End -->
+
+                <!-- Main Menu Start -->
+                <div class="collapse navbar-collapse main-menu">
+                    <div class="nav-menu-wrapper">
+                        <ul class="navbar-nav mr-auto" id="menu">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#aboutus">Sobre nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ website.urls.services }}">Servicios</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ website.urls.reservations }}">Contacto</a></li>
+                            <li class="nav-item highlighted-menu"><a class="nav-link" href="{{ website.urls.reservations }}">Pide cita</a></li>
+                        </ul>
+                    </div>
+                    <!-- Let’s Start Button Start -->
+                    <div class="header-btn d-inline-flex">
+                        <a href="{{ website.urls.reservations }}" class="btn-default">Pide cita</a>
+                    </div>
+                    <!-- Let’s Start Button End -->
+                </div>
+                <!-- Main Menu End -->
+                <div class="navbar-toggle"></div>
+            </div>
+        </nav>
+        <div class="responsive-menu"></div>
+    </div>
+</header>
+<!-- Header End -->
+
+
+{% block body %}
+{% endblock body %}
+<!-- Footer Start -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- About Footer Start -->
+                <div class="about-footer">
+                    <!-- Footer Logo Start -->
+                    <div class="footer-logo">
+                        <img src="assets/ds/images/logo-azul-footer.png" alt="Logo" style="max-width: 300px;">
+                    </div>
+                    <!-- Footer Logo End -->
+
+                    <!-- About Footer Content Start -->
+                    <div class="about-footer-content">
+                        <p>El objetivo de nuestra clínica es brindar una odontología amigable, atenta pero con el más alto nivel en tratamientos dentales tanto generales como especializados.</p>
+                    </div>
+                    <!-- About Footer Content End -->
+                </div>
+                <!-- About Footer End -->
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <!-- Footer Quick Links Start -->
+                <div class="footer-links footer-quick-links">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#aboutus">Sobre nosotros</a></li>
+                        <li><a href="{{ website.urls.services }}">Servicios</a></li>
+                        <li><a href="{{ website.urls.reservations }}">Pide cita</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Quick Links End -->
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <!-- Footer Social Links Start -->
+                <div class="footer-links footer-social-links">
+                    <h3>Redes sociales</h3>
+                    <ul>
+                        {% for social in website.socials %}
+                            <li><a href="{{ social.url }}">{{  social.id }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Footer Social Links End -->
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <!-- Footer Contact Links Start -->
+                <div class="footer-links footer-contact-links" >
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="mailto:{{ website.contact.email }}">{{ website.contact.email }}</a></li>
+                        <li><a href="tel:{{ website.contact.phone }}">{{ website.contact.phone }}</a></li>
+                        <li><a href="{{ website.urls.reservations }}"> {{ website.contact.address_short }} </a></li>
+                        <li><a href="{{ website.urls.reservations }}">{{ website.contact.location }}</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Contact Links End -->
+            </div>
+        </div>
+
+        <!-- Footer Copyright Section Start -->
+        <div class="footer-copyright">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Footer Copyright Start -->
+                    <div class="footer-copyright-text">
+                        <p>© {{ utils.today | date_format('%Y') }} {{  website.contact.name }}. Todos los derechos reservados</p>
+                    </div>
+                    <!-- Footer Copyright End -->
+                </div>
+            </div>
+        </div>
+        <!-- Footer Copyright Section End -->
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Jquery Library File -->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<!-- Bootstrap js file -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Validator js file -->
+<script src="assets/js/validator.min.js"></script>
+<!-- SlickNav js file -->
+<script src="assets/js/jquery.slicknav.js"></script>
+<!-- Swiper js file -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<!-- Counter js file -->
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<!-- no quitar, hace los efectos de las imagenes -->
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- Magnific js file -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- SmoothScroll -->
+<script src="assets/js/SmoothScroll.js"></script>
+<!-- Parallax js -->
+<script src="assets/js/parallaxie.js"></script>
+<!-- MagicCursor js file -->
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/magiccursor.js"></script>
+<!-- Text Effect js file -->
+<script src="assets/js/SplitText.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<!-- YTPlayer js File -->
+<!--<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>-->
+<!-- Wow js file -->
+<script src="assets/js/wow.js"></script>
+<!-- Main Custom js file -->
+<script src="assets/js/function.js"></script>
+<!--
+	<script src="../assets/js/theme-panel.js"></script>
+	-->
+
+
+<!-- {{ ' --' + '>' }}
+    {% if website.modules.popup.active -%}
+        <script src="{{ common.modules.popup.js }}"></script>
+    {% endif %}
+ {{ '<!-- ' }} -->
+</body>

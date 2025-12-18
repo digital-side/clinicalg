@@ -1,0 +1,1327 @@
+﻿<!--{{ ' --' + '>' }}
+{% from "functions.j2" import random_uuid with context %}
+{% set uuid = random_uuid() %}
+{{ '<!-- ' }} -->
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-ES" lang="es-ES">
+<!--<![endif]-->
+
+<head>
+    <!--{{ ' --' + '>' }}
+    {%- with module_active=website.modules.ganalitycs.active, GoogleAnalyticsID=website.GAnalyticsID %}
+        {%- include 'google-analitycs.j2' %}
+    {% endwith %}
+    {%- with module_active=website.modules.gtagmanager.active, GoogleTagManagerID=website.GTagManagerID %}
+        {%- include 'google-tags.j2' %}
+    {% endwith %}
+    {{ '<!-- ' }} -->
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--{{ ' --' + '>' }}
+    {% include 'metas.j2' %}
+    {{ '<!-- ' }} -->
+
+    <title>{% block title %}{{ website.title }}{% endblock %}</title>
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+	<!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="assets/css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="assets/css/all.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="assets/css/animate.css" rel="stylesheet">
+	<!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<link rel="stylesheet" href="assets/css/mousecursor.css">
+	<!-- Main Custom Css -->
+	<link href="assets/css/custom.css" rel="stylesheet" media="screen">
+
+
+	    <link rel="stylesheet" type="text/css" href="assets/ds.css">
+
+</head>
+<body>
+<!-- {{ ' --' + '>' }}
+{%- with module_conf=website.modules.popup,
+            popup_image="assets/img/ds/popup.png",
+            popup_redirect_url=website.urls.reservations %}
+    {%- include 'popup.j2' %}
+{% endwith %}
+{{ '<!-- ' }} -->
+
+    <!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="assets/images/loader.svg" alt=""></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<!-- Logo Start -->
+					<a class="navbar-brand" href="index.html">
+<!--						<img src="assets/images/logo.svg" alt="Logo">-->
+                        <img src="assets/ds/images/logo-azul.png" alt="Logo" width="400">
+					</a>
+					<!-- Logo End -->
+
+					<!-- Main Menu Start -->
+					<div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="index.html#aboutus">Sobre nosotros</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ website.urls.services }}">Servicios</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ website.urls.reservations }}">Contacto</a></li>
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="{{ website.urls.reservations }}">Pide cita</a></li>
+                            </ul>
+                        </div>
+                        <!-- Let’s Start Button Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="{{ website.urls.reservations }}" class="btn-default">Pide cita</a>
+                        </div>
+                        <!-- Let’s Start Button End -->
+					</div>
+					<!-- Main Menu End -->
+					<div class="navbar-toggle"></div>
+				</div>
+			</nav>
+			<div class="responsive-menu"></div>
+		</div>
+	</header>
+	<!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <div class="hero bg-image hero-slider">
+        <div class="hero-slider-layout">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+
+                    <!-- Hero Slide Start -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide">
+                            <!-- Slider Image Start -->
+                            <div class="hero-slider-image">
+                                <img src="assets/images/ds/hero2.jpg" alt="">
+                            </div>
+                            <!-- Slider Image End -->
+
+                            <!-- Slider Content Start -->
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-12">
+                                        <!-- Hero Content Start -->
+                                        <div class="hero-content">
+                                            <!-- Section Title Start -->
+                                            <div class="section-title">
+                                                <h3 class="wow fadeInUp">{{ website.contact.name }}</h3>
+                                                <h1 class="text-anime-style-2" data-cursor="-opaque">La mejor experiencia en salud dental a tu servicio </h1>
+                                                <!--
+                                                <p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                                -->
+                                            </div>
+                                            <!-- Section Title End -->
+
+                                            <!-- Hero Content Body Start -->
+                                            <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+                                                <a href="{{ website.urls.reservations }}" class="btn-default">Pide una cita</a>
+                                            </div>
+                                            <!-- Hero Content Body End -->
+
+                                            <!-- Google Rating Start -->
+                                            <div class="google-rating wow fadeInUp" data-wow-delay="0.75s">
+                                                <ul>
+                                                    <li>Google Rating <span>4.9</span></li>
+                                                    <li>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </li>
+                                                    <li><a style="color: white;" href="{{ website.urls.google_reviews }}"> Basado en +150 reseñas</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- Google Rating End -->
+                                        </div>
+                                        <!-- Hero Content End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slider Content End -->
+                        </div>
+                    </div>
+                    <!-- Hero Slide End -->
+
+                    <!-- Hero Slide Start -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide">
+                            <!-- Slider Image Start -->
+                            <div class="hero-slider-image">
+                                <img src="assets/images/ds/hero3.jpg" alt="">
+                            </div>
+                            <!-- Slider Image End -->
+
+                            <!-- Slider Content Start -->
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-12">
+                                        <!-- Hero Content Start -->
+                                        <div class="hero-content">
+                                            <!-- Section Title Start -->
+                                            <div class="section-title">
+                                                <h3 class="wow fadeInUp">{{ website.contact.name }}</h3>
+                                                <h1 class="text-anime-style-2" data-cursor="-opaque">Atención de calidad para toda la familia</h1>
+                                                <!--
+                                                <p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                                -->
+                                            </div>
+                                            <!-- Section Title End -->
+
+                                            <!-- Hero Content Body Start -->
+                                            <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+                                                <a href="{{ website.urls.reservations }}" class="btn-default">Pide una cita</a>
+                                            </div>
+                                            <!-- Hero Content Body End -->
+
+                                            <!-- Google Rating Start -->
+                                            <div class="google-rating wow fadeInUp" data-wow-delay="0.75s">
+                                                <ul>
+                                                    <li>Google Rating <span>4.9</span></li>
+                                                    <li>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </li>
+                                                    <li><a style="color: white;" href="{{ website.urls.google_reviews }}"> Basado en +150 reseñas</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- Google Rating End -->
+                                        </div>
+                                        <!-- Hero Content End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slider Content End -->
+                        </div>
+                    </div>
+                    <!-- Hero Slide End -->
+
+                    <!-- Hero Slide Start -->
+                    <div class="swiper-slide">
+                        <div class="hero-slide">
+                            <!-- Slider Image Start -->
+                            <div class="hero-slider-image">
+                                <img src="assets/images/ds/hero1.jpg" alt="">
+                            </div>
+                            <!-- Slider Image End -->
+
+                            <!-- Slider Content Start -->
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-12">
+                                        <!-- Hero Content Start -->
+                                        <div class="hero-content">
+                                            <!-- Section Title Start -->
+                                            <div class="section-title">
+                                                <h3 class="wow fadeInUp">{{ website.contact.name }}</h3>
+                                                <h1 class="text-anime-style-2" data-cursor="-opaque">Pon tu sonrisa en buenas manos</h1>
+                                                <!--
+                                                <p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                                -->
+                                            </div>
+                                            <!-- Section Title End -->
+
+                                            <!-- Hero Content Body Start -->
+                                            <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+                                                <a href="{{ website.urls.reservations }}" class="btn-default">Pide una cita</a>
+                                            </div>
+                                            <!-- Hero Content Body End -->
+
+                                            <!-- Google Rating Start -->
+                                            <div class="google-rating wow fadeInUp" data-wow-delay="0.75s">
+                                                <ul>
+                                                    <li>Google Rating <span>4.9</span></li>
+                                                    <li>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </li>
+                                                    <li><a style="color: white;" href="{{ website.urls.google_reviews }}"> Basado en +150 reseñas</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- Google Rating End -->
+                                        </div>
+                                        <!-- Hero Content End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slider Content End -->
+                        </div>
+                    </div>
+                    <!-- Hero Slide End -->
+                </div>
+                <div class="swiper-pagination"></div>
+			</div>
+		</div>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- Call To Action Start -->
+    <div class="cta-box">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Cta Box Item Start -->
+                    <div class="cta-box-item wow fadeInUp">
+                        <div class="icon-box">
+                            <img src="assets/images/icon-cta-phone.svg" alt="">
+                        </div>
+                        <div class="cta-box-content">
+                            <h3>¿ Necesitas una valoración ?</h3>
+                            <p>Llámanos : {{ website.contact.phone }}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cta Box Item End -->
+
+                <!-- Cta Box Item Start -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="cta-box-item wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="icon-box">
+                            <img src="assets/images/icon-cta-time.svg" alt="">
+                        </div>
+                        <div class="cta-box-content">
+                            <h3>Horario</h3>
+                            {% for item in website.timetable %}
+                                <p>{{ item.day | replace('-', ' a ') }}: {{ item.hours | replace('-', ' a ') }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Cta Box Item End -->
+
+                <div class="col-lg-4 col-md-12 col-12">
+                    <!-- Cta Box Btn Start -->
+                    <div class="cta-box-btn wow fadeInUp" data-wow-delay="0.5s">
+                        <a href="{{ website.urls.reservations }}" class="btn-default btn-highlighted">Pide cita</a>
+                    </div>
+                    <!-- Cta Box Btn End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action End -->
+
+    <!-- About Us Section Start -->
+	<div class="about-us" id="aboutus">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- About Image Start -->
+                    <div class="about-image">
+                        <div class="about-img-1">
+                            <figure class="image-anime reveal">
+                                <img src="assets/images/ds/child-410x389.jpg" alt="">
+                            </figure>
+                        </div>
+
+                        <div class="about-img-2">
+                            <figure class="image-anime reveal">
+                                <img src="assets/images/about-us-img-2.jpg" alt="">
+                            </figure>
+                        </div>
+
+                        <!-- About Experience Circle Start -->
+                        <div class="about-experience">
+                            <figure>
+                                <img src="assets/images/about-experience-circle.png" alt="">
+                            </figure>
+                        </div>
+                        <!-- About Experience Circle End -->
+                    </div>
+                    <!-- About Image End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- About Content Start -->
+                    <div class="about-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">Sobre nosotros</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Tu camino</span> hacia una sonrisa más sana comienza aquí</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">En nuestra clínica nos dedicamos a cuidar tu salud dental con un enfoque profesional, cercano y personalizado. Contamos con un equipo de especialistas en odontología general, estética dental, ortodoncia, implantes y salud bucal integral, trabajando con tecnología avanzada para garantizar resultados seguros y duraderos. Nuestro compromiso es ofrecerte una experiencia cómoda y de confianza, acompañándote en cada paso hacia una sonrisa más sana y radiante.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- About Us Body Start -->
+                        <div class="about-us-body wow fadeInUp" data-wow-delay="0.5s">
+                            <ul>
+                                <li>Equipo Experimentado</li>
+                                <li>Servicios Integrales</li>
+                                <li>Tecnología de Última Generación</li>
+                                <li>Urgencias Dentales</li>
+                            </ul>
+                        </div>
+                        <!-- About Us Body End -->
+
+                        <!-- About Us Footer Start -->
+                        <div class="about-us-footer wow fadeInUp" data-wow-delay="0.75s">
+                            <a href="index.html#aboutus" class="btn-default">Conócenos</a>
+                        </div>
+                        <!-- About Us Footer End -->
+                    </div>
+                    <!-- About Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us Section End -->
+
+    <!-- Our Serviceds Section Start -->
+    <div class="our-services" id="our-services">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Nuestros servicios</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">Servicios de <span>calidad</span> para ti.</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">Tu bienestar y tu sonrisa son nuestra prioridad.</p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp">
+                        <div class="icon-box">
+                            <div class="img">
+                                <img src="assets/images/icon-services-1.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="service-body">
+                            <h3>Salud dental</h3>
+                            <p>Tratamos problemas dentales comunes para brindarte la mejor atención dental para tu familia.</p>
+                        </div>
+                        <div class="read-more-btn">
+                            <a href="{{ website.urls.services }}">Más información</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="icon-box">
+                            <div class="img">
+                                <img src="assets/images/icon-services-2.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="service-body">
+                            <h3>Implantología</h3>
+                            <p>Implantes dentales seguros y estéticos para lucir tu sonrisa con confianza.</p>
+                        </div>
+                        <div class="read-more-btn">
+                            <a href="{{ website.urls.services }}">Más información</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon-box">
+                            <div class="img">
+                                <img src="assets/images/icon-services-3.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="service-body">
+                            <h3>Odontología estética</h3>
+                            <p>Mejora la estética de tu sonrisa con tratamientos modernos y precisos.</p>
+                        </div>
+                        <div class="read-more-btn">
+                            <a href="{{ website.urls.services }}">Más información</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.75s">
+                        <div class="icon-box">
+                            <div class="img">
+                                <img src="assets/images/icon-services-4.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="service-body">
+                            <h3>Blanqueamiento dental</h3>
+                            <p>Ilumina tu sonrisa con un blanqueamiento seguro, rápido y eficaz.</p>
+                        </div>
+                        <div class="read-more-btn">
+                            <a href="{{ website.urls.services }}">Más información</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Service Box Footer Start -->
+                    <div class="services-box-footer wow fadeInUp" data-wow-delay="1s">
+                        <p>Utilizamos lo último en tecnología y las técnicas más innovadoras para garantizar los mejores resultados en nuestros pacientes.</p>
+                        <a href="{{ website.urls.services }}" class="btn-default">Todos los Servicios</a>
+                    </div>
+                    <!-- Service Box Footer End -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Clinic Video Section Start -->
+        <div class="intro-clinic-video">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Visit Clinic Start -->
+                        <div class="visit-clinic parallaxie">
+                            <!-- Visit Clinic Content Start -->
+                            <div class="visit-clinic-content">
+                                <!-- Section Title Start -->
+                                <div class="section-title">
+                                    <h3 class="wow fadeInUp">visita nuestra clínica</h3>
+                                    <h2 class="text-anime-style-2" data-cursor="-opaque">Atención dental integral para todas las edades</h2>
+                                </div>
+                                <!-- Section Title End -->
+
+                                <!-- Visit Clinic Btn Start -->
+                                <div class="visit-clinic-btn wow fadeInUp" data-wow-delay="0.25s" data-cursor-text="Play">
+                                    <a href="{{ website.contact.virtual_visit }}" class="play-btn" target="_blank">Visita virtual</a>
+                                </div>
+                                <!-- Visit Clinic Btn End -->
+                            </div>
+                            <!-- Visit Clinic Content End -->
+                        </div>
+                        <!-- Visit Clinic End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Intro Clinic Video Section End -->
+
+        <!-- Our Counter Section Start -->
+        <div class="our-counter">
+            <div class="container">
+                <div class="row">
+                    <p>
+                        Te invitamos a conocernos en persona y descubrir unas instalaciones diseñadas para tu comodidad y tranquilidad. Cada espacio está pensado para que tu visita sea agradable, desde la recepción hasta los gabinetes, con un ambiente moderno y acogedor.
+                    </p>
+                    <p>
+                        Contamos con tecnología de última generación que nos permite realizar diagnósticos más precisos y tratamientos menos invasivos, más rápidos y confortables. Ven a visitarnos, recorre la clínica con nuestro equipo y te explicaremos cómo trabajamos y qué soluciones podemos ofrecerte para cuidar tu sonrisa.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <!-- Our Counter Section End -->
+
+        <!-- Icon Start Image Start -->
+        <div class="icon-star-image">
+            <img src="assets/images/icon-star.svg" alt="">
+        </div>
+        <!-- Icon Start Image End -->
+    </div>
+    <!-- Our Serviceds Section End -->
+
+    <!-- Why Choose Us Section Start -->
+    <div class="why-choose-us">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Por qué nosotros</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">Todo lo que nos <span> define </span> </h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 order-1">
+                    <!-- Why Choose Box Start -->
+                    <div class="why-choose-box-1">
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="assets/images/icon-why-us-1.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+
+                            <!-- Why Choose Content Start -->
+                            <div class="why-choose-content">
+                                <h3>Amplia experiencia</h3>
+                                <p>Años de trayectoria cuidando de tu salud dental y de ti.</p>
+                            </div>
+                            <!-- Why Choose Content End -->
+                        </div>
+                        <!-- Why Choose Item End -->
+
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="assets/images/icon-why-us-2.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+
+                            <!-- Why Choose Content Start -->
+                            <div class="why-choose-content">
+                                <h3>Atención personalizada</h3>
+                                <p>Queremos ofrecerte la mejor experiencia en cada visita.</p>
+                            </div>
+                            <!-- Why Choose Content End -->
+                        </div>
+                        <!-- Why Choose Item End -->
+
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.5s">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="assets/images/icon-why-us-3.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+
+                            <!-- Why Choose Content Start -->
+                            <div class="why-choose-content">
+                                <h3>Planes de pago flexibles </h3>
+                                <p>Cómodos y adaptados para hacer tu tratamiento más accesible.</p>
+                            </div>
+                            <!-- Why Choose Content End -->
+                        </div>
+                        <!-- Why Choose Item End -->
+                    </div>
+                    <!-- Why Choose Box Start -->
+                </div>
+
+                <div class="col-lg-4 order-lg-1 order-md-2 order-1">
+                    <!-- Why Choose Image Start -->
+                    <div class="why-choose-image wow fadeInUp">
+                        <figure>
+                            <img src="assets/images/why-choose-us-img.png" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6 order-lg-2 order-md-1 order-2">
+                    <!-- Why Choose Box Start -->
+                    <div class="why-choose-box-2">
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="assets/images/icon-why-us-4.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+
+                            <!-- Why Choose Content Start -->
+                            <div class="why-choose-content">
+                                <h3>Servicios de urgencia</h3>
+                                <p>Respuesta rápida y confiable cuando más lo necesitas.</p>
+                            </div>
+                            <!-- Why Choose Content End -->
+                        </div>
+                        <!-- Why Choose Item End -->
+
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="assets/images/icon-why-us-5.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+
+                            <!-- Why Choose Content Start -->
+                            <div class="why-choose-content">
+                                <h3>Satisfacción de pacientes</h3>
+                                <p>Multitud de opiniones que respaldan nuestra calidad y cuidado excepcionales.</p>
+                            </div>
+                            <!-- Why Choose Content End -->
+                        </div>
+                        <!-- Why Choose Item End -->
+
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.5s">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="assets/images/icon-why-us-6.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+
+                            <!-- Why Choose Content Start -->
+                            <div class="why-choose-content">
+                                <h3>Tecnología dental avanzada</h3>
+                                <p> Para diagnósticos precisos y tratamientos más cómodos.</p>
+                            </div>
+                            <!-- Why Choose Content End -->
+                        </div>
+                        <!-- Why Choose Item End -->
+                    </div>
+                    <!-- Why Choose Box Start -->
+                </div>
+            </div>
+        </div>
+        <!-- Icon Start Image Start -->
+        <div class="icon-star-image">
+            <img src="assets/images/icon-star.svg" alt="">
+        </div>
+        <!-- Icon Start Image End -->
+    </div>
+    <!-- Why Choose Us Section End -->
+
+    <!-- How It Work Start -->
+    <div class="how-it-work">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- How It Work Image Start -->
+                    <div class="how-it-work-img">
+                        <figure class="reveal image-anime">
+                            <img src="assets/images/ds/explanation.jpg" alt="">
+                        </figure>
+                    </div>
+                    <!-- How It Work Image End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="how-it-work-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">Cómo trabajamos</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Qué hacemos</span> por tu salud dental</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">Guiamos tu proceso dental paso a paso con cuidados personalizados</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- How Work Accordion Start -->
+
+                        <!-- FAQ Accordion Start -->
+                        <div class="faq-accordion how-work-accordion" id="accordion">
+                            <!-- FAQ Item Start -->
+                            <div class="accordion-item wow fadeInUp">
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-how-it-work-1.svg" alt="">
+                                </div>
+                                <h2 class="accordion-header" id="heading1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1" style="text-transform: none;">
+                                        Concierta una cita
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <p>Contáctanos y reservaremos una cita para vernos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item End -->
+
+                            <!-- FAQ Item Start -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.25s">
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-how-it-work-2.svg" alt="">
+                                </div>
+                                <h2 class="accordion-header" id="heading2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        Consulta personalizada
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <p>Evaluaremos tu caso de forma personalizada.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item End -->
+
+                            <!-- FAQ Item Start -->
+                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-how-it-work-3.svg" alt="">
+                                </div>
+                                <h2 class="accordion-header" id="heading3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        Cuidado experto
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <p> Una vez valorado, te ofreceremos la mejor solución dental para tu caso.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item End -->
+                        </div>
+                        <!-- FAQ Accordion End -->
+                        <!-- How Work Accordion End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- How It Work End -->
+
+    <!-- Our Team Start -->
+    <div class="our-team" style="display: none">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Quienes somos</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Nuestro fantástico</span> equipo</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">Nuestro equipo combina experiencia, formación continua y un trato cercano para ofrecerte la mejor atención.</p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-item wow fadeInUp">
+                        <!-- Team Image Start -->
+                        <div class="team-image">
+                            <figure class="image-anime">
+                                <img src="assets/ds/images/person.png" alt="">
+                            </figure>
+                        </div>
+                        <!-- Team Image End -->
+
+                        <!-- Team Content Start -->
+                        <div class="team-content">
+                            <h3>Bárbara Garrido</h3>
+                            <p>Directora de salud dental y odotología.</p>
+                        </div>
+                        <!-- Team Content End -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.25s">
+                        <!-- Team Image Start -->
+                        <div class="team-image">
+                            <figure class="image-anime">
+                                <img src="assets/ds/images/person.png" alt="">
+                            </figure>
+                        </div>
+                        <!-- Team Image End -->
+
+                        <!-- Team Content Start -->
+                        <div class="team-content">
+                            <h3>dr.mike johnson</h3>
+                            <p>Director de oratodoncia e implatología.</p>
+                        </div>
+                        <!-- Team Content End -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Team Image Start -->
+                        <div class="team-image">
+                            <figure class="image-anime">
+                                <img src="assets/ds/images/person.png" alt="">
+                            </figure>
+
+                        </div>
+                        <!-- Team Image End -->
+
+                        <!-- Team Content Start -->
+                        <div class="team-content">
+                            <h3>Pepita Perez</h3>
+                            <p>Higienista</p>
+                        </div>
+                        <!-- Team Content End -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Team Image Start -->
+                        <div class="team-image">
+                            <figure class="image-anime">
+                                <img src="assets/ds/images/person.png" alt="">
+                            </figure>
+                        </div>
+                        <!-- Team Image End -->
+
+                        <!-- Team Content Start -->
+                        <div class="team-content">
+                            <h3>Fulanita tal</h3>
+                            <p>Recepcion</p>
+                        </div>
+                        <!-- Team Content End -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Team Image Start -->
+                        <div class="team-image">
+                            <figure class="image-anime">
+                                <img src="assets/ds/images/person.png" alt="">
+                            </figure>
+                        </div>
+                        <!-- Team Image End -->
+
+                        <!-- Team Content Start -->
+                        <div class="team-content">
+                            <h3>Fulanita tal</h3>
+                            <p>Recepcion</p>
+                        </div>
+                        <!-- Team Content End -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+            </div>
+        </div>
+        <!-- Icon Start Image Start -->
+        <div class="icon-star-image">
+            <img src="assets/images/icon-star.svg" alt="">
+        </div>
+        <!-- Icon Start Image End -->
+    </div>
+    <!-- Our Team End -->
+
+    <!-- Our Testiminial Start -->
+    <div class="our-testimonials" style="display: none">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Opiniones</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Qué dicen</span> de nosotros</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">Las experiencias de nuestros pacientes reflejan la confianza, el cuidado y la calidad que ofrecemos en cada visita.</p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <!-- Testiminial Image Start -->
+                    <div class="testimonial-image">
+                        <div class="testimonial-img">
+                            <figure class="reveal image-anime">
+                                <img src="assets/images/ds/smile.jpg" alt="">
+                            </figure>
+                        </div>
+
+                        <!-- Terstimonial Rating Box Start -->
+                        <div class="testimonial-rating-box">
+                            <!-- Counter Item Start -->
+                            <div class="rating-counter-item">
+                                <div class="rating-counter-number">
+                                    <h3><span class="counter">4.9</span>/5</h3>
+                                </div>
+
+                                <div class="rating-counter-content">
+                                    <p>Puntuación de opiniones de pacientes en Google</p>
+                                </div>
+                            </div>
+                            <!-- Counter Item End -->
+
+                            <!-- Service Rating Start -->
+                            <div class="service-rating">
+                                <ul>
+                                    <li>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </li>
+                                    <li>Basado en +150 opiniones</li>
+                                 </ul>
+                            </div>
+                            <!-- Service Rating End -->
+                        </div>
+                        <!-- Terstimonial Rating Box End -->
+                    </div>
+                    <!-- Testiminial Image End -->
+                </div>
+
+                <div class="col-lg-7">
+                    <!-- Testimonial Slider Start -->
+					<div class="testimonial-slider">
+						<div class="swiper">
+							<div class="swiper-wrapper" data-cursor-text="Drag">
+                                {% for review in website.reviews %}
+                                    <!-- Testimonial Slide Start -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-header">
+                                                <div class="testimonial-quote-image">
+                                                    <img src="assets/images/icon-testimonial-quote.svg" alt="">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <p>"{{ review.comment }}"</p>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-body">
+                                                <div class="author-content">
+                                                    <h3> {{ review.name }}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Testimonial Slide End -->
+                                {% endfor %}
+
+							</div>
+							<div class="testimonial-btn">
+                                <div class="testimonial-button-prev"></div>
+				                <div class="testimonial-button-next"></div>
+                            </div>
+						</div>
+					</div>
+					<!-- Testimonial Slider End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Testiminial End -->
+
+    <!-- Our Blog Start -->
+     <div class="our-blog" style="display: none">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                     <!-- Section Title Start -->
+                     <div class="section-title">
+                        <h3 class="wow fadeInUp">blogs</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">Últimos <span>artículos</span> </h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">We are committed to sustainability.  eco-friendly initiatives.</p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                {% for item in website.blog %}
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="assets/images/{{ item.image }}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Body Start -->
+                        <div class="post-item-body">
+                            <h2><a href="#">{{ item.title }}</a></h2>
+                            <p>{{ item.summary }}</p>
+                        </div>
+                        <!-- Post Item Body End-->
+
+                        <!-- Post Item Footer Start-->
+                        <div class="post-item-footer">
+                            <a href="#" class="read-more-btn">Leer más</a>
+                        </div>
+                        <!-- Post Item Footer End-->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Icon Start Image Start -->
+        <div class="icon-star-image">
+            <img src="assets/images/icon-star.svg" alt="">
+        </div>
+        <!-- Icon Start Image End -->
+     </div>
+    <!-- Our Blog End -->
+
+    <!-- Footer Contact Us Start -->
+     <div id="contact-section" class="contact-now" >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Google Map Start -->
+                    <div class="contact-google-map">
+                        <!-- Google Map Iframe Start -->
+                        <div class="google-map-iframe">
+                            <iframe src="{{ website.contact.map }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <!-- Google Map Iframe End -->
+                    </div>
+                    <!-- Google Map End -->
+                </div>
+
+                <div class="col-lg-6">
+
+                    <!-- Footer Contact Content Start -->
+                    <div class="contact-now-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">Contacta ahora</h3>
+                            <!--<h2 class="text-anime-style-2" data-cursor="-opaque"><span>Get Free</span> Professional Consultation</h2>-->
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Consulta profesional <span> totalmente gratuita</span></h2>
+
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Contact Info Start -->
+                        <div class="contact-now-info">
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-list wow fadeInUp" data-wow-delay="0.2s">
+                                <!-- Icon Box Start -->
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-location.svg" alt="">
+                                </div>
+                                <!-- Icon Box End -->
+
+                                <!-- Contact Info Content Start -->
+                                <div class="contact-info-content">
+                                    <p>{{ website.contact.address }}. {{ website.contact.location }}</p>
+                                </div>
+                                <!-- Contact Info Content End -->
+                            </div>
+                            <!-- Contact Info Item End -->
+
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-list wow fadeInUp" data-wow-delay="0.4s">
+                                <!-- Icon Box Start -->
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-phone.svg" alt="">
+                                </div>
+                                <!-- Icon Box End -->
+
+                                <!-- Contact Info Content Start -->
+                                <div class="contact-info-content">
+                                    <p>{{ website.contact.phone }}</p>
+                                </div>
+                                <!-- Contact Info Content End -->
+                            </div>
+                            <!-- Contact Info Item End -->
+
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-list wow fadeInUp" data-wow-delay="0.6s">
+                                <!-- Icon Box Start -->
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-mail.svg" alt="">
+                                </div>
+                                <!-- Icon Box End -->
+
+                                <!-- Contact Info Content Start -->
+                                <div class="contact-info-content">
+                                    <p>{{ website.contact.email }}</p>
+                                </div>
+                                <!-- Contact Info Content End -->
+                            </div>
+                            <!-- Contact Info Item End -->
+
+                            <!-- Contact Info Item Start -->
+                            <div class="contact-info-list wow fadeInUp" data-wow-delay="0.8s">
+                                <!-- Icon Box Start -->
+                                <div class="icon-box">
+                                    <img src="assets/images/icon-clock.svg" alt="">
+                                </div>
+                                <!-- Icon Box End -->
+
+                                <!-- Contact Info Content Start -->
+                                <div class="contact-info-content">
+                                    {% for item in website.timetable %}
+                                    <p>{{ item.day | replace('-', ' a ') }}: {{ item.hours | replace('-', ' a ') }}</p>
+                                    {% endfor %}
+                                </div>
+                                <!-- Contact Info Content End -->
+                            </div>
+                            <!-- Contact Info Item End -->
+                        </div>
+
+                        <!-- Footer Appointment Button Start  -->
+                    <!--
+                        <div class="contact-appointment-btn wow fadeInUp" data-wow-delay="1s">
+                            <a href="{{ website.urls.reservations }}" class="btn-default">Pide cita</a>
+                        </div>
+                        -->
+                        <!-- Footer Appointment Button End  -->
+                    </div>
+                    <!-- Footer Contact Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Contact Us End -->
+
+    <!-- Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <img src="assets/ds/images/logo-azul-footer.png" alt="Logo" style="max-width: 300px;">
+                        </div>
+                        <!-- Footer Logo End -->
+
+                        <!-- About Footer Content Start -->
+                        <div class="about-footer-content">
+                            <p>El objetivo de nuestra clínica es brindar una odontología amigable, atenta pero con el más alto nivel en tratamientos dentales tanto generales como especializados.</p>
+                         </div>
+                         <!-- About Footer Content End -->
+                     </div>
+                    <!-- About Footer End -->
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <!-- Footer Quick Links Start -->
+                    <div class="footer-links footer-quick-links">
+                        <h3>Enlaces rápidos</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="index.html#aboutus">Sobre nosotros</a></li>
+                            <li><a href="{{ website.urls.services }}">Servicios</a></li>
+                            <li><a href="{{ website.urls.reservations }}">Pide cita</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Quick Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <!-- Footer Social Links Start -->
+                    <div class="footer-links footer-social-links">
+                        <h3>Redes sociales</h3>
+                        <ul>
+                            {% for social in website.socials %}
+                                <li><a href="{{ social.url }}">{{  social.id }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <!-- Footer Social Links End -->
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <!-- Footer Contact Links Start -->
+                    <div class="footer-links footer-contact-links" >
+                        <h3>Contacto</h3>
+                        <ul>
+                            <li><a href="mailto:{{ website.contact.email }}">{{ website.contact.email }}</a></li>
+                            <li><a href="tel:{{ website.contact.phone }}">{{ website.contact.phone }}</a></li>
+                            <li><a href="{{ website.urls.reservations }}"> {{ website.contact.address_short }} </a></li>
+                            <li><a href="{{ website.urls.reservations }}">{{ website.contact.location }}</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Contact Links End -->
+                </div>
+            </div>
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright-text">
+                            <p>© {{ utils.today | date_format('%Y') }} {{  website.contact.name }}. Todos los derechos reservados</p>
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Copyright Section End -->
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Jquery Library File -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="assets/js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <!-- no quitar, hace los efectos de las imagenes -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="assets/js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="assets/js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="assets/js/SplitText.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <!--<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>-->
+    <!-- Wow js file -->
+    <script src="assets/js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="assets/js/function.js"></script>
+<!--
+	<script src="../assets/js/theme-panel.js"></script>
+	-->
+
+
+	<!-- {{ ' --' + '>' }}
+    {% if website.modules.popup.active -%}
+        <script src="{{ common.modules.popup.js }}"></script>
+    {% endif %}
+ {{ '<!-- ' }} -->
+</body>
+</html>

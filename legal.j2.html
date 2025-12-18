@@ -1,0 +1,76 @@
+﻿{% extends "index.j2.html" %}
+{% set index_page = 'active' %}
+
+{% block body %}
+    <!-- Page Header Start -->
+    <div class="page-header" id="aviso-legal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-2" data-cursor="-opaque">
+                            <span>Aviso </span> Legal
+                        </h1>
+                    </div>
+                    <!-- Page Header Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    {%- with legal=website.legal %}
+        {%- include 'legal/aviso-legal.j2' %}
+    {% endwith %}
+
+    <!-- Page Header Start -->
+    <div class="page-header" id="politica-privacidad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-2" data-cursor="-opaque">
+                            <span>Política de </span> Privacidad
+                        </h1>
+                    </div>
+                    <!-- Page Header Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    {%- with legal=website.legal %}
+        {%- include 'legal/politica-privacidad.j2' %}
+    {% endwith %}
+
+    <!-- Page Header Start -->
+    <div class="page-header" id="politica-cookies">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-2" data-cursor="-opaque">
+                            <span>Política de </span> Cookies
+                        </h1>
+                    </div>
+                    <!-- Page Header Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    {%- with legal=website.legal %}
+        {%- include 'legal/politica-cookies.j2' %}
+    {% endwith %}
+{% endblock %}
+
+{#{% block footer_scripts %}#}
+{#    <!-- Jquery Library File -->#}
+{#    <script src="assets/js/jquery-3.7.1.min.js"></script>#}
+{#    <!-- Bootstrap js file -->#}
+{#    <script src="assets/js/bootstrap.min.js"></script>#}
+{#    <!-- Main Custom js file -->#}
+{#    <script src="assets/js/function.js"></script>#}
+{#{% endblock %}#}
