@@ -15,6 +15,9 @@
         #silktide-modal footer a[href^="https://silktide.com"] {
             display: none;
         }
+        #silktide-banner a.silktide-logo {
+            display: none;
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDCVLCT3J"></script>
@@ -25,7 +28,8 @@
         }
         gtag('js', new Date());
         gtag('config', 'G-HBDCVLCT3J');
-        ds_config_cm(silktideCookieBannerManager);
+        cm_params = { cookies_policy_url: "/legal.html#politica-cookies" };
+        ds_config_cm(silktideCookieBannerManager, cm_params);
     </script>
         <!--  -->
 

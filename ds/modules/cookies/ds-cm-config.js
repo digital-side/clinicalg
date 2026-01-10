@@ -26,7 +26,7 @@ function printConsentStatus() {
     console.log("-------------------------------------------");
 }
 
-function ds_config_cm(silktideCookieBannerManager) {
+function ds_config_cm(silktideCookieBannerManager, cm_params) {
     silktideCookieBannerManager.updateCookieBannerConfig({
         background: {
             showBackground: true
@@ -102,7 +102,8 @@ function ds_config_cm(silktideCookieBannerManager) {
         ],
         text: {
             banner: {
-                description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+                // description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+                description: "<p>Utilizamos cookies en nuestro sitio para mejorar su experiencia de usuario, proporcionar contenido personalizado y analizar nuestro tráfico.<a href=\"" + cm_params.cookies_policy_url + "\" target=\"_blank\">Política de Cookies.</a></p>",
                 acceptAllButtonText: "Aceptar todas",
                 acceptAllButtonAccessibleLabel: "Aceptar todas",
                 rejectNonEssentialButtonText: "Rechazar no esenciales",
