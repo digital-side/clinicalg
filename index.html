@@ -8,16 +8,26 @@
 <!--<![endif]-->
 
 <head>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a55ac38c-5976-47bb-9172-cf8bfbbab0da" data-blockingmode="auto" type="text/javascript"></script>
-    <!-- -->    <!-- Google tag (gtag.js) -->
+    <!-- -->    <link rel="stylesheet" id="silktide-cm-css" href="ds/modules/cookies/silktide-cm.css">
+    <script src="ds/modules/cookies/silktide-cm.js"></script>
+    <script src="ds/modules/cookies/ds-cm-config.js"></script>
+    <style>
+        #silktide-modal footer a[href^="https://silktide.com"] {
+            display: none;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDCVLCT3J"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'G-HBDCVLCT3J');
+        ds_config_cm(silktideCookieBannerManager);
     </script>
-            <!--  -->
+        <!--  -->
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
@@ -26,26 +36,26 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- -->
-    <meta charset="UTF-8"/>
-<meta name="description" content="Clínica Dental Lagunilla y Garrido (Logroño) (https://clinicadentallagunillaygarrido.com)"/>
-<meta name="keywords" content="clinica, dental, clinica dental, logroño, lagunilla, garrido, dentista, odontología, estomatología, José Luis Lagunilla, bárbara Garrido, Ortodoncia, Odontopediatría, Implantología , Estética dental, online"/>
-<meta name="author" content="Digital Side http://digitalside.es"/>
-<meta name="robots" content="max-image-preview:large">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="Lagunilla y Garrido. Tu clínica dental de confianza en Logroño">
-<meta property="og:title" content="Lagunilla y Garrido. Tu clínica dental de confianza en Logroño">
-<meta property="og:description" content="Cuidamos la salud dental de toda la familia con un enfoque profesional, cercano y personalizado.">
-<meta property="og:url" content="https://digital-side.github.io/clinicalg">
-<meta property="og:image" content="https://digital-side.github.io/clinicalg/assets/ds/images/logo-200x200.png"/>
+        <meta charset="UTF-8"/>
+    <meta name="description" content="Clínica Dental Lagunilla y Garrido (Logroño) (https://clinicadentallagunillaygarrido.com)"/>
+    <meta name="keywords" content="clinica, dental, clinica dental, logroño, lagunilla, garrido, dentista, odontología, estomatología, José Luis Lagunilla, bárbara Garrido, Ortodoncia, Odontopediatría, Implantología , Estética dental, online"/>
+    <meta name="author" content="Digital Side http://digitalside.es"/>
+    <meta name="robots" content="max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Lagunilla y Garrido. Tu clínica dental de confianza en Logroño">
+    <meta property="og:title" content="Lagunilla y Garrido. Tu clínica dental de confianza en Logroño">
+    <meta property="og:description" content="Cuidamos la salud dental de toda la familia con un enfoque profesional, cercano y personalizado.">
+    <meta property="og:url" content="https://digital-side.github.io/clinicalg">
+    <meta property="og:image" content="https://digital-side.github.io/clinicalg/assets/ds/images/logo-200x200.png"/>
     <meta property="og:image:width" content="200"/>
     <meta property="og:image:height" content="200"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Lagunilla y Garrido. Tu clínica dental de confianza en Logroño"/>
-<meta name="twitter:description" content="Cuidamos la salud dental de toda la familia con un enfoque profesional, cercano y personalizado."/>
-<meta name="twitter:site" content="@"/>
-<meta name="twitter:image" content="https://digital-side.github.io/clinicalg/assets/ds/images/logo-200x200.png"/>
-<meta name="twitter:creator" content="clinicadentallagunillaygarrido"/>    <!--  -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Lagunilla y Garrido. Tu clínica dental de confianza en Logroño"/>
+    <meta name="twitter:description" content="Cuidamos la salud dental de toda la familia con un enfoque profesional, cercano y personalizado."/>
+    <meta name="twitter:site" content="@"/>
+    <meta name="twitter:image" content="https://digital-side.github.io/clinicalg/assets/ds/images/logo-200x200.png"/>
+    <meta name="twitter:creator" content="clinicadentallagunillaygarrido"/>    <!--  -->
 
     <title>Lagunilla y Garrido. Tu clínica dental de confianza en Logroño</title>
     <!-- Favicon Icon
@@ -84,7 +94,7 @@
 <div class="preloader">
     <div class="loading-container">
         <div class="loading"></div>
-        <div id="loading-icon"><img src="assets/images/loader.svg" alt=""></div>
+        <div id="loading-icon"><img src="assets/ds/images/logo-loading.png" alt=""></div>
     </div>
 </div>
 <!-- Preloader End -->

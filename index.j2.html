@@ -10,13 +10,9 @@
 <!--<![endif]-->
 
 <head>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a55ac38c-5976-47bb-9172-cf8bfbbab0da" data-blockingmode="auto" type="text/javascript"></script>
     <!--{{ ' --' + '>' }}
-    {%- with module_active=website.modules.ganalitycs.active, GoogleAnalyticsID=website.GAnalyticsID %}
-        {%- include 'google-analitycs.j2' %}
-    {% endwith %}
-    {%- with module_active=website.modules.gtagmanager.active, GoogleTagManagerID=website.GTagManagerID %}
-        {%- include 'google-tags.j2' %}
+    {%- with module_active=website.modules.cookies.active, GoogleAnalyticsID=website.GAnalyticsID %}
+        {%- include 'cookie-banner.j2' %}
     {% endwith %}
     {{ '<!-- ' }} -->
 
@@ -73,7 +69,8 @@
 <div class="preloader">
     <div class="loading-container">
         <div class="loading"></div>
-        <div id="loading-icon"><img src="assets/images/loader.svg" alt=""></div>
+{#        <div id="loading-icon"><img src="assets/images/loader.svg" alt=""></div>#}
+        <div id="loading-icon"><img src="assets/ds/images/logo-loading.png" alt=""></div>
     </div>
 </div>
 <!-- Preloader End -->
